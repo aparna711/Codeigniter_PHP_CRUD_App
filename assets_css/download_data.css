@@ -1,0 +1,37 @@
+.btn-apply, .btn-reset {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-apply {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-apply:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+.btn-reset {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-reset:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+}
+
+.btn-apply i, .btn-reset i {
+    font-size: 16px;
+}

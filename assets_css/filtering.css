@@ -1,0 +1,293 @@
+/* application/assets/css/filtering.css */
+
+/* --------------------------------------
+   1. General Setup and Typography
+   -------------------------------------- */
+
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa; /* Light background for the whole page */
+    margin: 0;
+    padding: 0;
+    color: #343a40; /* Darker text for readability */
+}
+.container {
+    width: 95%; 
+    max-width: 1500px;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+    border-radius: 8px;
+}
+h2 {
+    color: #007bff; /* Primary blue color for heading */
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+/* --------------------------------------
+   2. Filtering Controls (Form)
+   -------------------------------------- */
+.filter-controls {
+    padding: 20px;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    background-color: #e9ecef; /* Slightly darker than body background */
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px;
+    align-items: flex-end; 
+}
+.filter-group {
+    flex-grow: 1;
+    min-width: 150px;
+    /* This ensures search bar gets more width */
+    flex-basis: 180px; 
+}
+.filter-group:nth-child(3) { /* Targetting the Search by Name/Email field */
+    flex-basis: 250px;
+}
+.filter-controls label {
+    display: block;
+    font-weight: 600; /* Slightly bolder labels */
+    margin-bottom: 6px;
+    color: #495057;
+    font-size: 0.95em;
+}
+.filter-controls input[type="text"], 
+.filter-controls select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+.filter-controls input[type="text"]:focus, 
+.filter-controls select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+.filter-controls button {
+    cursor: pointer;
+    background-color: #28a745; /* Green for action/go button */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    height: 40px; 
+    width: 100%;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+.filter-controls button:hover {
+    background-color: #218838;
+}
+
+/* --------------------------------------
+   3. Data Table Styling
+   -------------------------------------- */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    table-layout: fixed; /* Ensures perfect column alignment */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+}
+.data-table th, .data-table td {
+    padding: 12px 10px;
+    border: 1px solid #dee2e6;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.data-table thead th {
+    background-color: #007bff; /* Primary color header */
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    border-color: #007bff;
+}
+.data-table tbody tr:nth-child(even) {
+    background-color: #f8f9fa; /* Light gray stripe */
+}
+.data-table tbody tr:hover {
+    background-color: #e2f2ff; /* Highlight row on hover */
+}
+.text-center {
+    text-align: center;
+}
+/* Style for specific columns */
+.data-table td:nth-child(5) { /* Age column */
+    text-align: center; 
+}
+.data-table td:nth-child(6) { /* Status column */
+    font-weight: bold; 
+}
+
+/* Status colors for better visibility */
+.data-table td:nth-child(6):contains('Active') {
+    color: #28a745; /* Green */
+}
+.data-table td:nth-child(6):contains('Inactive') {
+    color: #dc3545; /* Red */
+}
+
+/* filter info*/
+.filter-applied-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    border-top: 1px solid #fcd34d;
+    color: #92400e;
+}
+
+.filter-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(251, 191, 36, 0.2);
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-weight: 600;
+}
+
+.filter-icon {
+    font-size: 18px;
+}
+
+.clear-filters {
+    background: #f59e0b;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 13px;
+    margin-left: 12px;
+    transition: all 0.3s ease;
+}
+
+.clear-filters:hover {
+    background: #d97706;
+    transform: scale(1.05);
+}
+
+.results-count {
+    font-weight: 500;
+    font-size: 15px;
+}
+
+
+/* --------------------------------------
+   4. Action Buttons
+   -------------------------------------- */
+.action-btns {
+    text-align: center; /* Center buttons within the cell */
+}
+
+.action-btns a {
+    padding: 6px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    margin: 0 2px;
+    font-size: 0.85em;
+    min-width: 60px; /* Ensures buttons don't shrink too much */
+}
+
+/* Edit Button (Info/Teal) */
+.btn-edit {
+    background-color: #17a2b8;
+}
+.btn-edit:hover {
+    background-color: #138496;
+}
+
+/* Delete Button (Danger/Red) */
+.btn-delete {
+    background-color: #dc3545;
+}
+.btn-delete:hover {
+    background-color: #c82333;
+}
+.action-label::before {
+    content: "ACTIONS";
+    /* Hide the unicode character, use the word "ACTIONS" */
+}
+/* If you want to keep the emoji, use this: */
+/* .action-label::before {
+    content: "⚙️ Actions";
+    margin-right: 3px;
+} */
+
+
+/* Flash Messages */
+.flash-messages {
+    padding: 20px 30px;
+    margin-bottom: 0;
+}
+
+.flash-message {
+    padding: 16px 20px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    animation: slideDown 0.4s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.flash-success {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    border-left: 5px solid #047857;
+}
+
+.flash-error {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    color: white;
+    border-left: 5px solid #b91c1c;
+}
+
+.flash-message .icon {
+    font-size: 20px;
+}
+
+.flash-message .close-btn {
+    margin-left: auto;
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.8);
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0 8px;
+    border-radius: 4px;
+    transition: background 0.2s ease;
+}
+
+.flash-message .close-btn:hover {
+    background: rgba(255,255,255,0.2);
+}

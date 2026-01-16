@@ -1,0 +1,113 @@
+   /* General Body and Layout */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 800px;
+        }
+
+        /* Headings and Separators */
+        .heading {
+            text-align: center;
+            color: #333;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        hr {
+            border: 0;
+            border-top: 1px dashed #ccc;
+            margin: 20px 0;
+        }
+
+        /* Fieldset and Legend */
+        fieldset {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+        }
+        legend {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #007bff;
+            padding: 0 10px;
+        }
+
+        /* Labels and Inputs */
+        label {
+            display: inline-block;
+            width: 200px; /* Aligns labels nicely */
+            margin-bottom: 10px;
+            font-weight: 500;
+            color: #555;
+        }
+        input[type="text"], 
+        input[type="email"], 
+        input[type="tel"], 
+        input[type="number"], 
+        input[type="date"], 
+        select {
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: calc(100% - 220px); /* Fill remaining space */
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+        input:focus, select:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        /* Radio and Checkbox Styling */
+        input[type="radio"], 
+        input[type="checkbox"] {
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+        /* Style the labels for radio/checkbox groups to be inline */
+        label[for^="status_"], 
+        label[for^="gender_"],
+        label[for^="interest_"] {
+            width: auto;
+            margin-right: 15px;
+        }
+
+        /* Submit Button */
+        button[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+        button[type="submit"]:hover {
+            background-color: #218838;
+        }
+
+        /* Specific alignment for radio/checkbox groups */
+        fieldset > label[for="gender_female"],
+        fieldset > label[for="gender_male"],
+        fieldset > label[for="status_active"],
+        fieldset > label[for="status_inactive"] {
+            width: auto;
+            margin-right: 20px;
+        }
