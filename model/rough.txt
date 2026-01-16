@@ -1,0 +1,43 @@
+INSERT INTO customers (
+    first_name, 
+    last_name, 
+    email, 
+    phone, 
+    age, 
+    membership_from, 
+    membership_to, 
+    country_id, 
+    access_level, 
+    account_status, 
+    gender, 
+    product_interest
+) VALUES
+-- 1. Active Admin (USA)
+('John', 'Smith', 'john.smith@acme.com', '1234567890', 35, '2024-01-15', '2025-01-15', 1, 'admin', 'Active', 'Male', 'Product A, Service C'),
+
+-- 2. Inactive Sales (Canada) - Expired Membership
+('Alice', 'Johnson', 'alice.j@test.ca', '9876543210', 28, '2023-11-01', '2024-11-01', 2, 'sales', 'Inactive', 'Female', 'Product B'),
+
+-- 3. Active Employee (UK)
+('Robert', 'Brown', 'robert.b@corp.co.uk', '5551112222', 42, '2024-05-20', '2025-05-20', 3, 'employee', 'Active', 'Male', 'Product A, Product B'),
+
+-- 4. Active Employee (USA) - Female
+('Sarah', 'Miller', 'sarah.m@gmail.com', '4443332222', 25, '2025-02-01', '2026-02-01', 1, 'employee', 'Active', 'Female', 'Service C'),
+
+-- 5. Active Sales (Canada) - Single Product
+('David', 'Wilson', 'david.w@corp.ca', '7778889999', 50, '2024-03-10', '2025-03-10', 2, 'sales', 'Active', 'Male', 'Product A'),
+
+-- 6. Inactive Admin (UK) - Older Expiration
+('Emma', 'Taylor', 'emma.t@ukmail.net', '1112223333', 31, '2022-06-01', '2023-06-01', 3, 'admin', 'Inactive', 'Female', 'Product B, Service C'),
+
+-- 7. Active Employee (USA) - All Interests
+('Michael', 'Clark', 'michael.c@live.com', '6665554444', 39, '2024-10-01', '2025-10-01', 1, 'employee', 'Active', 'Male', 'Product A, Product B, Service C'),
+
+-- 8. Active Sales (USA) - Newest Membership
+('Olivia', 'Lopez', 'olivia.l@yahoo.com', '9998887777', 24, '2025-01-20', '2026-01-20', 1, 'sales', 'Active', 'Female', 'Product B'),
+
+-- 9. Inactive Employee (Canada) - Recently expired
+('James', 'Lee', 'james.l@org.ca', '3334445555', 48, '2024-05-01', '2024-12-05', 2, 'employee', 'Inactive', 'Male', 'Service C'),
+
+-- 10. Active Admin (UK) - Female
+('Chloe', 'Harris', 'chloe.h@business.uk', '0001110000', 29, '2025-12-01', '2026-12-01', 3, 'admin', 'Active', 'Female', 'Product A, Product B, Service C');
